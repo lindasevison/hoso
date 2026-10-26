@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>国際イベントのアクセシビリティ実践ガイド｜多言語案内・会場設計・字幕対応</title>
+  <meta name="description" content="国際イベントを参加しやすくするための実践ガイド。多言語案内の例、会場サイン、移動経路、字幕、受付対応、開催前チェックリストを具体的に解説します。">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Event Planning Journal">
+  <meta name="theme-color" content="#253c35">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="国際イベントのアクセシビリティ実践ガイド">
+  <meta property="og:description" content="多言語案内、会場設計、字幕、受付対応を実例とチェックリストで解説。">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1400&q=85">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --forest: #253c35;
+      --forest-light: #eaf0eb;
+      --sage: #a7b8a5;
+      --cream: #f7f4ec;
+      --orange: #bd704d;
+      --ink: #2b332f;
+      --muted: #6d756f;
+      --line: #e2e6df;
+      --white: #fff;
+      --shadow: 0 16px 42px rgba(37, 60, 53, .08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f6f2;
+      color: var(--ink);
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 16px;
+      line-height: 1.95;
+      overflow-wrap: anywhere;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: #315e4e;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    a:hover {
+      color: var(--orange);
+    }
+
+    .topbar {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .topbar-inner {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 15px 0;
+    }
+
+    .brand {
+      font-family: "DM Sans", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+
+    .topbar-note {
+      color: #d7e0d9;
+      font-size: 12px;
+    }
+
+    .page {
+      width: min(1160px, calc(100% - 36px));
+      margin: 34px auto 70px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 430px;
+      overflow: hidden;
+      background: var(--forest);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: clamp(28px, 5vw, 58px);
+      align-self: center;
+      color: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: #e7bc96;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .15em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 27px;
+      height: 2px;
+      background: #e7bc96;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.6;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(29px, 3.6vw, 43px);
+      letter-spacing: -.035em;
+    }
+
+    .hero-copy p:last-child {
+      margin: 20px 0 0;
+      color: #e4eae5;
+      font-size: 14px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+    }
+
+    .article-intro {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 25px;
+      align-items: start;
+      margin: 24px 0;
+      padding: 27px 30px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 17px;
+    }
+
+    .intro-label {
+      padding-top: 4px;
+      color: var(--orange);
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .article-intro p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 285px;
+      align-items: start;
+      gap: 25px;
+    }
+
+    .article {
+      min-width: 0;
+      padding: clamp(22px, 4.2vw, 46px);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .article p {
+      margin: 0 0 22px;
+    }
+
+    .lead {
+      color: #45534b;
+      font-size: 17px;
+    }
+
+    .toc {
+      margin: 30px 0;
+      padding: 24px 27px;
+      background: var(--cream);
+      border: 1px solid #ece5d8;
+      border-radius: 14px;
+    }
+
+    .toc-heading {
+      margin: 0 0 12px;
+      color: var(--forest);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .toc li {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .article h2 {
+      margin: 54px 0 20px;
+      padding: 0 0 13px;
+      border-bottom: 1px solid var(--line);
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(23px, 3vw, 30px);
+    }
+
+    .article h2::after {
+      content: "";
+      display: block;
+      width: 52px;
+      height: 3px;
+      margin-top: 13px;
+      background: var(--orange);
+    }
+
+    .article h2:first-of-type {
+      margin-top: 38px;
+    }
+
+    .article h3 {
+      margin: 29px 0 12px;
+      color: var(--forest);
+      font-size: 19px;
+    }
+
+    .article figure {
+      margin: 28px 0;
+    }
+
+    .article figure img {
+      width: 100%;
+      height: auto;
+      max-height: 450px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #e9ede7;
+      border-radius: 13px;
+    }
+
+    figcaption {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .tip {
+      margin: 26px 0;
+      padding: 21px 23px;
+      background: var(--forest-light);
+      border-left: 4px solid var(--forest);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .tip p {
+      margin: 0;
+    }
+
+    .tip-title {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--forest);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .example {
+      margin: 23px 0;
+      padding: 23px;
+      background: #fbf7f1;
+      border: 1px solid #eee5d8;
+      border-radius: 13px;
+    }
+
+    .example-label {
+      margin: 0 0 12px !important;
+      color: #9a593a;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+
+    .sign-example {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 15px 0;
+    }
+
+    .sign {
+      min-width: 0;
+      padding: 18px 13px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .sign strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--forest);
+      font-size: 17px;
+    }
+
+    .sign span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .table-wrap {
+      margin: 24px 0;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--forest-light);
+      color: var(--forest);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 18px 0 26px;
+      padding: 0;
+    }
+
+    .checklist li {
+      position: relative;
+      margin: 9px 0;
+      padding: 12px 14px 12px 43px;
+      background: #f5f7f3;
+      border-radius: 9px;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 15px;
+      top: 12px;
+      color: #386a51;
+      font-weight: 700;
+    }
+
+    .scorecard {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0;
+    }
+
+    .score-item {
+      padding: 18px;
+      background: #f5f7f3;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+    }
+
+    .score-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--forest);
+      font-size: 14px;
+    }
+
+    .score-item span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .faq-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-item:first-of-type {
+      padding-top: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 8px;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 16px;
+    }
+
+    .faq-item p {
+      margin: 0;
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 19px;
+    }
+
+    .side-card {
+      padding: 22px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .side-card h2 {
+      margin: 0 0 12px;
+      color: var(--forest);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .side-card p, .side-card li {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .side-card ul {
+      margin: 0;
+      padding-left: 19px;
+    }
+
+    .side-card li {
+      margin: 7px 0;
+    }
+
+    .side-image {
+      width: calc(100% + 44px);
+      max-width: none;
+      height: 165px;
+      margin: -22px -22px 17px;
+      object-fit: cover;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .meta {
+      margin-top: 42px;
+      padding-top: 21px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer {
+      padding: 27px 20px;
+      background: var(--forest);
+      color: #e0e7e1;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .footer p {
+      margin: 4px 0;
+    }
+
+    @media (max-width: 900px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      body {
+        font-size: 15px;
+      }
+
+      .topbar-inner {
+        width: calc(100% - 28px);
+      }
+
+      .topbar-note {
+        display: none;
+      }
+
+      .page {
+        width: calc(100% - 22px);
+        margin: 15px auto 35px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        border-radius: 16px;
+      }
+
+      .hero-image {
+        grid-row: 1;
+        min-height: 0;
+        height: 235px;
+      }
+
+      .hero-copy {
+        padding: 26px 22px 29px;
+      }
+
+      .article-intro {
+        grid-template-columns: 1fr;
+        gap: 7px;
+        padding: 21px;
+      }
+
+      .article {
+        padding: 22px 18px;
+      }
+
+      .article h2 {
+        margin-top: 42px;
+      }
+
+      .toc {
+        padding: 19px;
+      }
+
+      .sign-example,
+      .scorecard,
+      .sidebar {
+        grid-template-columns: 1fr;
+      }
+
+      .side-card {
+        padding: 20px;
+      }
+
+      .side-image {
+        width: calc(100% + 40px);
+        margin: -20px -20px 16px;
+      }
+
+      th, td {
+        padding: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">EVENT PLANNING JOURNAL</div>
+    <div class="topbar-note">実務に役立つイベント運営ガイド</div>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">ACCESSIBILITY / PRACTICAL GUIDE</p>
+      <h1>国際イベントを<br>参加しやすい場にする<br>実践ガイド</h1>
+      <p>
+        多言語案内、会場内の移動、字幕、受付対応。
+        参加者が迷わず情報を得て、プログラムに集中できる環境を
+        企画段階から整えるための考え方を紹介します。
+      </p>
+    </div>
+    <img
+      class="hero-image"
+      src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1400&q=85"
+      alt="さまざまな人が集まり交流するイベントの様子"
+      width="1400"
+      height="1000"
+      fetchpriority="high"
+    >
+  </section>
+
+  <section class="article-intro">
+    <div class="intro-label">IN THIS GUIDE</div>
+    <p>
+      イベントの参加しやすさは、会場に段差がないことや案内を翻訳することだけでは決まりません。
+      参加者が開催前に情報を見つけられるか、会場で目的地へ移動できるか、
+      発表内容を理解できるか、困ったときに相談できるかまで考える必要があります。
+      この記事では、準備に使える例とチェック項目をまとめました。
+    </p>
+  </section>
+
+  <div class="main-grid">
+
+    <article class="article">
+
+      <p class="lead">
+        国際会議、展示会、企業セミナー、文化イベントには、異なる言語を使う人、
+        初めて会場を訪れる人、移動や情報の受け取り方に配慮が必要な人など、
+        さまざまな参加者が集まります。主催者にとって当たり前の会場ルールでも、
+        初参加の人には分かりにくいことがあります。
+      </p>
+
+      <p>
+        例えば、受付の場所が見つからない、変更された会場が分からない、
+        映像の中の重要な情報を音声で説明していない、といった問題です。
+        こうした小さな障壁が重なると、参加者は内容を楽しむ前に多くの時間や労力を使うことになります。
+      </p>
+
+      <p>
+        参加者が困ってから対応するだけでなく、困りやすい場面を先に想定することが、
+        実用的なアクセシビリティ対策の出発点です。
+      </p>
+
+      <nav class="toc" aria-label="目次">
+        <p class="toc-heading">この記事で分かること</p>
+        <ol>
+          <li><a href="#overview">参加しやすいイベントの基本</a></li>
+          <li><a href="#languages">多言語案内の作り方と実例</a></li>
+          <li><a href="#signage">会場サインと移動経路</a></li>
+          <li><a href="#content">字幕・資料・発表内容の伝え方</a></li>
+          <li><a href="#registration">受付とスタッフ対応</a></li>
+          <li><a href="#website">事前案内ページの改善</a></li>
+          <li><a href="#audit">開催前のチェックと評価</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="overview">1. 参加しやすいイベントの基本</h2>
+
+      <p>
+        参加しやすさを考えるときは、イベントの流れを「参加前」「到着時」「プログラム中」「終了後」に分けて確認すると、
+        問題を見つけやすくなります。それぞれの段階で、参加者が必要とする情報やサポートは異なるためです。
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=85"
+          alt="参加者が会場で発表や説明を聞いている様子"
+          loading="lazy"
+          width="1200"
+          height="800"
+        >
+        <figcaption>プログラムの内容を理解し、安心して参加できる環境を全体で設計します。</figcaption>
+      </figure>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>段階</th>
+              <th>参加者が知りたいこと</th>
+              <th>主催者が準備するもの</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>参加前</td>
+              <td>日時、場所、言語、参加方法</td>
+              <td>案内ページ、アクセス情報、問い合わせ先</td>
+            </tr>
+            <tr>
+              <td>到着時</td>
+              <td>入口、受付、会場、必要な手続き</td>
+              <td>サイン、地図、受付スタッフ</td>
+            </tr>
+            <tr>
+              <td>プログラム中</td>
+              <td>発表内容、休憩時間、会場変更</td>
+              <td>資料、字幕、アナウンス、更新情報</td>
+            </tr>
+            <tr>
+              <td>終了後</td>
+              <td>資料、アンケート、問い合わせ先</td>
+              <td>フォローアップメール、公開資料、連絡窓口</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        この表を使ってイベントの流れを確認すると、準備担当者が見落としやすい部分を洗い出せます。
+        特に、ウェブサイトに掲載した案内と、当日に現地で提供する情報が一致しているかを確認することが大切です。
+      </p>
+
+      <div class="tip">
+        <span class="tip-title">実務のヒント</span>
+        初めて会場を訪れる人の立場で、申し込みページを開くところから受付に到着するまでの行動を順番に書き出してみましょう。迷いそうな箇所が、そのまま改善候補になります。
+      </div>
+
+      <h2 id="languages">2. 多言語案内の作り方と実例</h2>
+
+      <p>
+        多言語対応では、文章を翻訳するだけでなく、参加者が必要な情報をすぐに理解できる構成にすることが重要です。
+        イベントの参加者にどの言語が必要かを確認し、すべてを一律に翻訳する前に、
+        行動に直結する情報を優先して整理します。
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
+          alt="スタッフがイベント準備について話し合っている様子"
+          loading="lazy"
+          width="1200"
+          height="800"
+        >
+        <figcaption>翻訳や案内文を準備する際は、運営チーム内で用語と情報を統一します。</figcaption>
+      </figure>
+
+      <h3>最初に翻訳するべき情報</h3>
+
+      <ul class="checklist">
+        <li>開催日時、タイムゾーン、受付開始時刻</li>
+        <li>会場名、住所、最寄り駅、出口、徒歩経路</li>
+        <li>受付方法、参加証、必要書類</li>
+        <li>セッション名、開始時刻、会場番号</li>
+        <li>通訳、字幕、配布資料の提供方法</li>
+        <li>問い合わせ先と当日の連絡手段</li>
+      </ul>
+
+      <p>
+        専門用語や固有名詞は、ページごとに異なる表記にならないようにします。
+        登壇者名、組織名、セッション名、会場名を一覧にし、翻訳者、ウェブ担当者、現地スタッフが同じ表記を使えるようにしましょう。
+      </p>
+
+      <h3>案内文は短く、行動が分かる形にする</h3>
+
+      <p>
+        長い説明文の中に複数の指示を詰め込むと、参加者が重要な情報を見つけにくくなります。
+        一文に一つの行動を示し、場所や時間などの具体的な情報を前の方に置くと理解しやすくなります。
+      </p>
+
+      <div class="example">
+        <p class="example-label">案内文の改善例</p>
+        <p><strong>分かりにくい例：</strong> 受付後は案内に従い、各プログラムの開始時間までに所定の会場へお越しください。</p>
+        <p><strong>改善例：</strong> 受付は1階入口の右側です。受付後、2階の会議室Aへお進みください。発表は10時に始まります。</p>
+        <p>
+          改善例では、場所、移動先、開始時刻を分けています。実際のイベントでは、会場の構造や案内表示と照らし合わせて表現を調整します。
+        </p>
+      </div>
+
+      <h3>多言語の表示をそろえる</h3>
+
+      <div class="sign-example">
+        <div class="sign">
+          <strong>受付</strong>
+          <span>REGISTRATION</span>
+        </div>
+        <div class="sign">
+          <strong>休憩スペース</strong>
+          <span>LOUNGE</span>
+        </div>
+        <div class="sign">
+          <strong>講演会場</strong>
+          <span>CONFERENCE ROOM</span>
+        </div>
+        <div class="sign">
+          <strong>出口</strong>
+          <span>EXIT</span>
+        </div>
+      </div>
+
+      <p>
+        これは表示を統一するためのサンプルです。実際の案内では、会場の正式名称、英語表現、必要な追加言語を確認してください。
+        同じ場所を資料では「Room A」、現地では「Hall A」と呼ぶような不一致は避けます。
+      </p>
+
+      <p>
+        日本語の案内を分かりやすく整える方法については、
+        <a href="https://www.bunka.go.jp/koho_hodo_oshirase/hodohappyo/92488301.html" target="_blank" rel="noopener noreferrer">文化庁の「やさしい日本語」ガイドラインの紹介</a>
+        も参考になります。短い文、分かりやすい言葉、整理された情報は、多言語イベントの案内を見直す際にも役立ちます。
+      </p>
+
+      <h2 id="signage">3. 会場サインと移動経路</h2>
+
+      <p>
+        会場に到着した参加者が最初に探すのは、入口、受付、会場、トイレなどの基本的な場所です。
+        案内表示を設置するときは、目的地の前だけでなく、参加者が進む方向を判断する分岐点にも表示が必要かを確認します。
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
+          alt="通路と共有スペースが整った屋内施設"
+          loading="lazy"
+          width="1200"
+          height="800"
+        >
+        <figcaption>入口から目的地まで、参加者が迷いにくい連続した案内を設計します。</figcaption>
+      </figure>
+
+      <h3>サインは「見つける場所」を意識する</h3>
+
+      <p>
+        受付の表示は入口から見える位置にあるか、階段とエレベーターの分岐で次の行動が分かるか、
+        複数の会場が並ぶ場所で部屋番号を確認できるかを点検します。
+        文字の大きさ、背景とのコントラスト、表示の高さ、情報量も確認しましょう。
+      </p>
+
+      <p>
+        色だけで行き先を区別すると、色の違いを認識しにくい人には伝わらない場合があります。
+        色と一緒に文字や分かりやすい記号を使い、同じ種類の場所には一貫した表記を用いると案内しやすくなります。
+      </p>
+
+      <h3>会場内の経路を実際に歩いてみる</h3>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85"
+          alt="通路とワークスペースが配置された施設内の様子"
+          loading="lazy"
+          width="1200"
+          height="800"
+        >
+        <figcaption>机や機材の配置を含めて、参加者が移動する経路を確認します。</figcaption>
+      </figure>
+
+      <p>
+        会場の入口から受付、各セッション、トイレ、休憩スペースまで、実際に歩いて経路を確認します。
+        通路に置かれた荷物、延長コード、仮設看板、開いた扉などが移動の妨げになっていないかも確認してください。
+      </p>
+
+      <p>
+        車いすや歩行補助具を利用する人に配慮が必要な場合は、段差の有無だけでなく、
+        通路幅、扉の開閉、エレベーターの場所、利用可能なトイレなども確認します。
+        設備が利用できるか不明な場合は、施設の管理者へ事前に問い合わせましょう。
+      </p>
+
+      <p>
+        日本での移動や施設利用に関する基本情報を調べる際には、
+        <a href="https://www.japan.travel/en/guide/accessibility-in-japan/" target="_blank" rel="noopener noreferrer">日本政府観光局（JNTO）のアクセシブルツーリズム案内</a>
+        も参考になります。イベント会場では、実際の施設情報を確認したうえで参加者向けの案内を作成してください。
+      </p>
+
+      <div class="tip">
+        <span class="tip-title">会場テストの方法</span>
+        会場図を見ながらではなく、入口からスタートして受付や目的の部屋を探してみます。表示を見落とした場所、進む方向に迷った場所を記録し、サインの位置や案内文を修正しましょう。
+      </div>
+
+      <h2 id="content">4. 字幕・資料・発表内容の伝え方</h2>
+
+      <p>
+        イベントの情報が音声だけ、あるいは画面に表示される文字だけに偏っていると、
+        参加者によっては内容を十分に把握できないことがあります。
+        プログラムの内容や参加者のニーズに応じて、字幕、テキスト資料、図の説明などを検討します。
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=85"
+          alt="登壇者がステージで発表し参加者が話を聞いている様子"
+          loading="lazy"
+          width="1200"
+          height="800"
+        >
+        <figcaption>発表の重要な情報を、音声や画面だけに依存せず伝えられるか確認します。</figcaption>
+      </figure>
+
+      <h3>字幕を準備するときの確認事項</h3>
+
+      <ul class="checklist">
+        <li>話している内容と字幕のタイミングが合っている</li>
+        <li>専門用語、数字、人名、組織名を確認した</li>
+        <li>話者が変わったことを区別できる</li>
+        <li>文字が背景に埋もれず読みやすい</li>
+        <li>画面上の重要な情報を字幕が隠していない</li>
+        <li>ライブ字幕の場合は遅延や誤認識への対応を決めた</li>
+      </ul>
+
+      <p>
+        自動字幕は作成時間を短縮できる一方、専門用語や固有名詞を誤認識することがあります。
+        重要な発表では、可能な範囲で人による確認を行い、発表資料と用語を照合しておきましょう。
+      </p>
+
+      <h3>スライドの情報量を見直す</h3>
+
+      <p>
+        一枚のスライドに大量の文章や細かな図表を詰め込むと、後方の席や小さな画面では内容を読み取りにくくなります。
+        見出し、要点、図表の説明を整理し、重要な数字や比較結果にはラベルを付けます。
+      </p>
+
+      <p>
+        グラフの違いを色だけで示さず、線の種類、記号、直接的なラベルも利用すると、
+        情報を区別しやすくなります。図や写真が発表の理解に不可欠な場合は、
+        登壇者が口頭でも要点を説明できるように準備します。
+      </p>
+
+      <h3>配布資料は開催前に確認する</h3>
+
+      <p>
+        事前配布できる資料がある場合は、参加者が自分のペースで内容を確認できるようにします。
+        ファイル名を分かりやすくし、資料の言語、更新日、対象セッションを明記すると、
+        複数のファイルがある場合にも探しやすくなります。
+      </p>
+
+      <p>
+        資料の公開前には、個人情報、機密情報、画像や引用の利用条件も確認してください。
+        参加者へ資料を提供する予定であれば、公開時期やダウンロード方法も案内に含めます。
+      </p>
+
+      <h2 id="registration">5. 受付とスタッフ対応</h2>
+
+      <p>
+        受付は参加者が最初に運営スタッフと接する場所です。
+        ここで案内が分かりにくいと、会場に到着した後も不安や混乱が続くことがあります。
+        受付の流れをシンプルにし、質問先と対応方法を明確にしておきましょう。
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"
+          alt="人々が集まる屋内スペースの様子"
+          loading="lazy"
+          width="1200"
+          height="800"
+        >
+        <figcaption>受付や案内の場所は、参加者が入口から見つけやすい配置を検討します。</figcaption>
+      </figure>
+
+      <h3>受付の手順を分かりやすくする</h3>
+
+      <p>
+        事前登録者と当日登録者で手順が異なる場合は、列の入口で違いが分かるようにします。
+        受付後に名札、資料、受信機などを渡す場合は、どこで何を受け取るのかを整理し、
+        同じ説明をウェブサイトと現地表示の両方に掲載します。
+      </p>
+
+      <h3>スタッフ向けの案内メモを用意する</h3>
+
+      <div class="example">
+        <p class="example-label">スタッフ用メモのサンプル</p>
+        <p><strong>受付場所：</strong> 1階正面入口の右側</p>
+        <p><strong>メイン会場：</strong> 2階 会議室A</p>
+        <p><strong>休憩スペース：</strong> 2階ロビー奥</p>
+        <p><strong>困ったとき：</strong> 当日の運営責任者へ連絡</p>
+        <p>
+          これは書式例です。実際の場所や連絡先に置き換え、受付、案内、会場担当者が同じ情報を使えるようにします。
+        </p>
+      </div>
+
+      <h3>サポートを依頼する方法を知らせる</h3>
+
+      <p>
+        参加者が困ったときに、誰へ相談すればよいかを事前に案内します。
+        相談窓口、スタッフの目印、問い合わせ方法を示し、必要に応じて対面とオンラインなど
+        複数の連絡方法を用意します。
+      </p>
+
+      <p>
+        また、参加者の希望を確認せずに身体に触れたり、移動を手伝ったりすることは避け、
+        まずどのようなサポートが必要かを尋ねることが大切です。
+        個人的な情報を取り扱う場合は、必要な範囲だけを共有し、プライバシーにも配慮します。
+      </p>
+
+      <h2 id="website">6. 事前案内ページの改善</h2>
+
+      <p>
+        参加者はイベント当日より前に、スマートフォンやパソコンから情報を探します。
+        申し込みページ、確認メール、会場案内、当日のプログラムが別々に管理されている場合は、
+        重要な情報に矛盾がないかを確認してください。
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
+          alt="パソコンを使ってウェブ情報を確認する作業環境"
+          loading="lazy"
+          width="1200"
+          height="800"
+        >
+        <figcaption>参加者向けの情報は、必要な内容を探しやすく、スマートフォンでも読みやすい構成にします。</figcaption>
+      </figure>
+
+      <h3>案内ページに必要な項目</h3>
+
+      <ul class="checklist">
+        <li>開催日時と会場の正式名称</li>
+        <li>地図、最寄り駅、入口、徒歩経路</li>
+        <li>受付時間、参加証、入場手順</li>
+        <li>プログラムとセッションごとの会場</li>
+        <li>利用できる言語や字幕の情報</li>
+        <li>施設内の移動や利用設備に関する情報</li>
+        <li>問い合わせ先と当日の連絡方法</li>
+        <li>変更情報を確認するためのページ</li>
+      </ul>
+
+      <h3>変更情報を一か所にまとめる</h3>
+
+      <p>
+        開催直前に会場や開始時刻が変更されると、古い情報を見た参加者が迷う可能性があります。
+        最新情報を掲載するページを決め、確認メールや案内ページからその場所へ移動できるようにします。
+        変更があった場合は、関連する案内にも更新を反映します。
+      </p>
+
+      <h3>スマートフォンで表示を確認する</h3>
+
+      <p>
+        小さな画面で文字が読めるか、リンクを押しやすいか、表が横方向に大きくはみ出さないか、
+        画像が表示されなくても必要な情報が伝わるかを確認します。
+        画像には内容が分かる代替テキストを付け、リンクの文言は移動先が分かる表現にします。
+      </p>
+
+      <p>
+        関連分野の設備や情報を調べる際の参照先の一つとして、
+        <a href="https://hoso.co.jp/" target="_blank" rel="noopener noreferrer">https://hoso.co.jp/</a>
+        も確認できます。イベントの内容に応じて、設備、情報提供、参加者への案内をそれぞれ具体的な要件に落とし込むことが大切です。
+      </p>
+
+      <h2 id="audit">7. 開催前のチェックと評価</h2>
+
+      <p>
+        チェックリストは、作成した項目を確認するだけでなく、実際に参加者が利用する流れに沿って試すと効果的です。
+        主催者が会場を熟知していると、初参加の人が迷う場所を見落とすことがあります。
+        可能であれば、イベントの準備に直接関わっていない人にも案内を試してもらいましょう。
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=85"
+          alt="参加者が集まり会話を交わすイベントの様子"
+          loading="lazy"
+          width="1200"
+          height="800"
+        >
+        <figcaption>参加者の目線で案内や会場を試し、実際に迷う箇所がないか確認します。</figcaption>
+      </figure>
+
+      <h3>開催前の確認リスト</h3>
+
+      <ul class="checklist">
+        <li>案内ページの日時、会場、プログラムが最新である</li>
+        <li>受付から各会場までの移動経路を確認した</li>
+        <li>サインが分岐点や入口で見つけやすい</li>
+        <li>多言語の名称や会場番号が統一されている</li>
+        <li>字幕や資料の準備担当と確認方法が決まっている</li>
+        <li>受付スタッフが会場案内と問い合わせ先を把握している</li>
+        <li>必要なサポートを相談する方法が明示されている</li>
+        <li>変更情報を更新し、スタッフへ伝える手順がある</li>
+      </ul>
+
+      <h3>簡単なイベント準備スコアカード</h3>
+
+      <p>
+        次の項目を、開催前のチームミーティングで確認してみましょう。
+        点数を付ける場合は、項目を実際に確認できたかどうかを基準にします。
+        このスコアカードは運営改善のための独自チェック例であり、公式認証や法令適合の判定ではありません。
+      </p>
+
+      <div class="scorecard">
+        <div class="score-item">
+          <strong>情報の分かりやすさ</strong>
+          <span>日時、場所、受付、プログラムがすぐに見つかるか。</span>
+        </div>
+        <div class="score-item">
+          <strong>移動のしやすさ</strong>
+          <span>入口から受付、会場、必要な設備までの経路が明確か。</span>
+        </div>
+        <div class="score-item">
+          <strong>内容の理解しやすさ</strong>
+          <span>資料、字幕、言語案内が必要に応じて準備されているか。</span>
+        </div>
+        <div class="score-item">
+          <strong>サポート体制</strong>
+          <span>相談先、担当者、変更時の連絡方法が明確か。</span>
+        </div>
+      </div>
+
+      <p>
+        各項目を「確認済み」「要改善」「未確認」に分類し、要改善の項目には担当者と対応期限を設定します。
+        次回のイベントでは、同じ項目を再確認することで、準備の改善状況を比較できます。
+      </p>
+
+      <h2 id="faq">8. よくある質問</h2>
+
+      <div class="faq-item">
+        <h3>Q. 国際イベントでは、すべての情報を多言語化する必要がありますか？</h3>
+        <p>
+          必要な言語は参加者の構成やイベントの目的によって異なります。
+          まずは日時、会場、参加方法、プログラム、問い合わせ先など、行動に直結する情報を優先して整理しましょう。
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Q. 案内表示を作るときに最も重要なことは何ですか？</h3>
+        <p>
+          参加者が必要な場所で表示を見つけられ、次の行動を理解できることです。
+          文字の読みやすさ、設置位置、言語、記号、会場内での表記の統一を確認してください。
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Q. 自動字幕だけでも問題ありませんか？</h3>
+        <p>
+          自動字幕は準備に役立ちますが、誤認識や専門用語の誤りが発生する場合があります。
+          重要な内容では、可能な範囲で確認・修正し、読みやすさと正確さを確かめることが大切です。
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Q. アクセシビリティの確認はいつ始めるべきですか？</h3>
+        <p>
+          企画の初期段階から始めるのがおすすめです。
+          会場や配信方式を決める前に必要な条件を整理すると、後から大きな変更を行うリスクを減らせます。
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Q. 参加者から特別なサポートの相談があった場合は？</h3>
+        <p>
+          まず本人が希望するサポートを確認し、対応できる範囲と手順を説明します。
+          個人情報は必要な範囲でのみ扱い、担当スタッフが分かる連絡体制を整えておきましょう。
+        </p>
+      </div>
+
+      <h2>まとめ</h2>
+
+      <p>
+        参加しやすい国際イベントをつくるには、多言語案内、会場の移動経路、字幕、資料、受付対応を
+        別々に考えるのではなく、参加者の行動全体に沿って準備することが重要です。
+      </p>
+
+      <p>
+        まずは、参加者が開催前に情報を見つけられるか、会場内で迷わず移動できるか、
+        発表内容を理解できるか、困ったときに相談できるかを確認します。
+        そのうえで、案内文、サイン、資料、スタッフ向けメモを具体的に整えましょう。
+      </p>
+
+      <p>
+        開催前に参加者の目線で案内を試し、問題が見つかったら担当者と期限を決めて改善します。
+        実際の利用状況を確認しながら継続的に見直すことが、より分かりやすく参加しやすいイベントにつながります。
+      </p>
+
+      <div class="meta">
+        <p>カテゴリー：イベント企画・多言語案内・アクセシビリティ</p>
+        <p>この記事はイベント準備のための一般的な実務ガイドです。会場設備や必要な対応は、施設の条件、イベント形式、参加者のニーズに応じて確認してください。</p>
+      </div>
+
+    </article>
+
+    <aside class="sidebar">
+
+      <section class="side-card">
+        <img
+          class="side-image"
+          src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=85"
+          alt="講演を聞く参加者とイベント会場"
+          loading="lazy"
+          width="800"
+          height="500"
+        >
+        <h2>準備で優先したい4項目</h2>
+        <ul>
+          <li>必要な情報を見つけやすくする</li>
+          <li>会場内の経路を分かりやすくする</li>
+          <li>発表内容を理解しやすくする</li>
+          <li>相談先と対応手順を明確にする</li>
+        </ul>
+      </section>
+
+      <section class="side-card">
+        <h2>開催前のチーム確認</h2>
+        <p>
+          案内ページと現地表示の内容をそろえ、スタッフ全員が会場案内、問い合わせ先、変更時の連絡手順を説明できるか確認しましょう。
+        </p>
+      </section>
+
+      <section class="side-card">
+        <img
+          class="side-image"
+          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=85"
+          alt="イベントの準備を話し合う運営チーム"
+          loading="lazy"
+          width="800"
+          height="500"
+        >
+        <h2>改善を記録する</h2>
+        <p>
+          発見した問題、対応担当者、期限、確認結果を記録しておくと、次回のイベントで同じ問題が起こるのを防ぎやすくなります。
+        </p>
+      </section>
+
+    </aside>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>EVENT PLANNING JOURNAL</p>
+  <p>イベント企画と参加者体験に関する実務情報</p>
+</footer>
+
+</body>
+</html>
